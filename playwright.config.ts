@@ -18,7 +18,7 @@ export default defineConfig({
     trace: 'on',                  // always collect trace
     screenshot: 'on',              // always take screenshots
     video: 'on',                   // always record video
-    headless: false,           //Runs in headed mode                
+    headless: true,           //Runs in headless mode fro CI               
   },
 
   projects: [
