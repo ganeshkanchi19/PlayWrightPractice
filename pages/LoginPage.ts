@@ -31,12 +31,13 @@ export class LoginPage {
    * Perform login (NO navigation waits here)
    */
   async login(username: string, password: string): Promise<void> {
-  await this.usernameInput.fill(username);
-  await this.passwordInput.fill(password);
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
 
-  await Promise.all([
-    this.page.waitForURL('**/dashboard/**'),
-    this.loginButton.click(),
-  ]);
-}
+    await Promise.all([
+      this.page.waitForURL('**/dashboard/index', { waitUntil: 'domcontentloaded' }),
+      this.loginButton.click(),
+    ]);
+    console.log("Login successful");
+  }
 }

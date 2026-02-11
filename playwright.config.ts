@@ -14,19 +14,17 @@ export default defineConfig({
   ],
 
   use: {
-    viewport:null, 
-    launchOptions:{
-      args: ['--start-maximized']   //Maximize the window
-    },              
+    viewport:{ width: 1920, height: 1080 },               
     trace: 'on',                  // always collect trace
     screenshot: 'on',              // always take screenshots
     video: 'on',                   // always record video
+    headless: false,           //Runs in headed mode                
   },
 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'chrome',
+      use: { ...devices['Desktop Chrome'] ,channel: 'chrome'},
     },
     {
       name: 'firefox',
